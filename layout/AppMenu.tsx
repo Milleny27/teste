@@ -13,8 +13,17 @@ const AppMenu = () => {
     const model: AppMenuItem[] = [
         {
             label: 'Home',
-            items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
+            items: [
+                //{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+                { label: 'Pacientes', icon: 'pi pi-fw pi-user', to: '/pages/pacientes' },
+                { label: 'Medicamentos', icon: 'pi pi-fw pi-sitemap', to: '/pages/medicamentos'},
+                { label: 'Medicações', icon: 'pi pi-fw pi-sitemap', to: '/pages/medicacao'},
+                { label: 'Residencias', icon: 'pi pi-fw pi-key', to: '/pages/residencia' },
+                { label: 'Visitas', icon: 'pi pi-fw pi-sitemap', to: '/pages/visita' },
+                { label: 'Anotações', icon: 'pi pi-fw pi-pencil', to: '/pages/note' },
+            ]
         },
+        /*
         {
             label: 'UI Components',
             items: [
@@ -169,6 +178,7 @@ const AppMenu = () => {
                 }
             ]
         }
+            */
     ];
 
     return (
@@ -178,9 +188,7 @@ const AppMenu = () => {
                     return !item?.seperator ? <AppMenuitem item={item} root={true} index={i} key={item.label} /> : <li className="menu-separator"></li>;
                 })}
 
-                <Link href="https://blocks.primereact.org" target="_blank" style={{ cursor: 'pointer' }}>
-                    <img alt="Prime Blocks" className="w-full mt-3" src={`/layout/images/banner-primeblocks${layoutConfig.colorScheme === 'light' ? '' : '-dark'}.png`} />
-                </Link>
+                
             </ul>
         </MenuProvider>
     );
